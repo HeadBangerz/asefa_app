@@ -1,0 +1,82 @@
+/* CSS declarations go here */
+
+head{
+    width:auto;
+    float:none;
+    margin:auto;
+}
+
+legend{
+    color:#00cc00;
+}
+/*title{
+    width:100%;
+    position:fixed;
+	top:0;
+}*/
+body{
+    /*margin: 70px auto;
+    top:50;
+    margin:auto; position:relative;
+    width:auto;
+    height:100%;*/
+    text-align:left;
+    float:none;
+    background-color:#000000;
+    color:white;
+}
+#authenticator:hover{
+    color:#00cc00;
+}
+fieldset{
+    border-color:#00cc00;
+}
+h1{
+    text-align:left;
+    position:relative;
+    font-family:"Lucida Console";
+    color:#00cc00;
+
+}
+#result{
+    color:#00cc00;
+}
+#button_counter{
+    color:#00cc00;
+    float:inherit;
+}
+#sex{
+    color:#00cc00;
+}
+textarea{
+    background-color:#222;
+    border-color:#222;
+    width:100%;
+    resize:no;
+    size:auto;
+    overflow:auto;
+}
+#bob{
+    background-color:#222;
+    border-color:#222;
+}
+
+summary{
+    font-size:150%;
+    background-color:#f3f3ec;
+    border-color: black;
+    color:black;
+}
+
+details{
+    background-color:#f3f3ec;
+    border-color: black;
+    color:black;
+}
+
+input{
+    color:black;
+}
+mark{
+background-color:#B3FF88;
+}

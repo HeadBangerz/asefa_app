@@ -1,0 +1,87 @@
+<head>
+  <title>אסיפה</title>
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="stylesheet" type="text/css" href="/website/my_css.css">
+  <link rel="stylesheet" type="text/css" href="/website/bootstrap.css">
+  <meta charset="UTF-8">
+  <!--favicon-->
+  <link rel="icon" sizes="16x16 32x32" href="/favicon2.png?v=2">
+  <!--App logos-->
+  <link rel="apple-touch-icon" href="/icon/Icon.png"/>  
+  <link rel="apple-touch-icon" sizes="72x72" href="/icons/Icon-72.png"/>  
+  <link rel="apple-touch-icon" sizes="114x114" href="/icons/Icon@2x.png"/>  
+  <script src="//cdn.mobiopush.com/mobiojs/a52bf8cc21dca3351e76cb5c11975b20" type="text/javascript" id="_mobio_js"></script>
+</head>
+  
+<body>
+  <div id="wrapper">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="nav-bar">
+    <div class="container" id="container">
+      <div class="navbar-header">
+          <h2 id="title">אסיפה</h2>
+        <ul class="nav navbar-nav">
+          <li><a id="timer"></a></li>
+          <li><a href="#" id="timerReason"></a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+  <div id="after-navbar">
+    <div id="content">
+    {{> auth}}
+    {{> headers}}
+    </div>
+  </div>
+  <div id="footer">
+    <p>© HBZ 2015 - All rights reserved.</p> <img src="/logo.png" id="logo">
+  </div>
+  </div>
+</body>
+<!--templates-->
+<template name="hello">
+  <button>Click Me</button>
+  <p id="button_counter">You've pressed The button {{counter}} times.</p>
+</template>
+
+<template name="auth" id="auth"> 
+  {{#if connected}}
+  {{else}}
+    <fieldset>
+      <legend>Login:</legend>
+      <input type="text" id="myid" placeholder="שם" />
+      <input type="text" id="inpttext" placeholder="קוד גישה"/>
+      <button id="authenticator">Authenticate</button>
+    </fieldset>
+  {{/if}}
+  <p id="result"></p> {{#if connected}}<button id="disconnect">התנתק</button> <button id="refresh">רענן</button>{{/if}}
+</template>
+
+<template name="headers" id="headers">
+    <p>
+      <ul class="list-group" id="admin{{adminConnection}}">
+        {{#each headers}}
+          <li class="list-group-item status{{status}} pos{{position}}">
+            <img class="test{{status}}" style="border:none;"/>
+            <details>
+             <summary><span data-Header={{header}} data-Position={{position}} class="header">{{position}}. {{header}}</span> {{#if adminConnection}}<p class="admincontrols"> <select id={{position}} data-selectedVal={{status}}><option value="unmarked">ללא סימון</option><option value="current">נדון</option><option value="nafal" >נפל</option><option value="postponed">נדחה</option><option value="avar">עבר</option></select> <Button id="reorderUp" data-Position={{position}}>⇧</Button> <Button id="reorderDown" data-Position={{position}}>⇩</Button> <button id="delete" data-position={{position}}>✘</button> <button class="callPeeps" data-Header={{header}} data-Position={{position}}></button></p>{{/if}}<span data-Status={{status}} class="timerx" data-active={{active}} data-Time={{time}} data-Position={{position}}></span></summary>
+             <pre contenteditable={{adminConnection}} id={{position}} class="content" data-value={{headercontent}}>{{headercontent}}</pre>
+            </details>
+          </li>
+          {{getTime}}
+          {{width}}
+          {{checkSelected}}
+        {{/each}}
+      </ul>
+    </p>
+    {{#if adminConnection}}<input type="text" id="headerinput" placeholder="Header"/> <input type="text" id="headercontent" placeholder="Content"/> <button id="add">Save</button> <button id="clear">Clear</button>{{/if}}
+    <pre id="timetest"></pre>
+</template>
+
+<template name="SecTest">
+  {{#each peeps}}
+    {{name}}{{code}}
+  {{/each}}
+</template>
+
+
+<!--/ old checkbox code <input type="checkbox" id={{position}} class="Highlight" checked={{headerhighlight}}> סמן -->

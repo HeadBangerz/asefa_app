@@ -1,0 +1,42 @@
+.Layer_0 {
+  background-image: url("Layer 0.png");
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1440px;
+  height: 2560px;
+  z-index: 1;
+}
+.color {
+  background-image: url("color.png");
+  position: absolute;
+  left: -11px;
+  top: -1px;
+  width: 1449px;
+  height: 302px;
+  z-index: 3;
+}
+.Hamburger_jpg {
+  background-image: url("Hamburger.jpg");
+  position: absolute;
+  left: 113px;
+  top: 103px;
+  width: 128px;
+  height: 104px;
+  z-index: 4;
+}
+.countdown {
+  font-size: 72px;
+  font-family: "Gisha";
+  color: rgb( 87, 87, 87 );
+  text-align: right;
+  text-shadow: 2.5px 4.33px 5px rgb( 0, 0, 0 );
+  -moz-transform: matrix( 1.26337448559671,0,0,1.42116475339145,0,0);
+  -webkit-transform: matrix( 1.26337448559671,0,0,1.42116475339145,0,0);
+  -ms-transform: matrix( 1.26337448559671,0,0,1.42116475339145,0,0);
+  position: absolute;
+  left: 1126.117px;
+  top: 140.918px;
+  z-index: 5;
+}
+
